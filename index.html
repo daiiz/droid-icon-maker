@@ -1,11 +1,100 @@
+<!doctype html>
 <html>
-<head>
-  <title>Drorid-icon-maker</title>
-</head>
-<body>
-  <br>
-   <center>
-       <h2>Coming soon!!</h2>
-   </center>
-   <br>
-</body></html>
+  <head>
+  	 <title>Droid-icon-maker</title>
+  	 <link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+  	 <style>
+  	     body {
+  	     	margin: 0px 0px 0px 0px;
+  	     }
+  	     #icon_area {
+  	     	background-color: #fff;
+  	     	padding: 50px 50px 50px 50px;
+  	     }
+  	     .edit_area, .footer {
+  	     	padding: 50px;
+  	     	padding-top: 10px;
+  	     	font-size: 12pt;
+  	     	color: #555;
+  	     	font-family: Meiryo, 'Open Sans', arial;
+  	     	z-index: 50;
+  	     }
+  	     .footer {
+  	     	padding-top: 20px;
+  	     	padding-bottom: 20px;
+  	     }
+  	     #left {
+  	     	position: relative;
+            top: 80px;
+            left: -38px;
+            -webkit-transform: rotate(142deg);
+            -webkit-transform-origin: 50% 15%; 
+            z-index: 30;
+            width: 30px;
+  	     }
+  	     #right {
+  	     	position: relative;
+            top: -74px;
+            left: 38px;
+            -webkit-transform: rotate(52deg);
+            -webkit-transform-origin: 50% 15%; 
+            z-index: 30;
+            width: 30px;
+  	     }
+  	     #body {
+  	     	position: relative;
+  	     	z-index: 20;
+  	     }
+  	     #app_bar {
+  	     	background-color: #B3C833;
+            /* height: 60px; */
+            padding: 10px;
+            font-family: 'Open Sans', Meiryo, arial;
+            color: #EEE;
+            font-size: 18pt;
+  	     }
+  	 </style>
+  </head>
+  <body>
+  	<div id='app_bar'>
+  		Doroid icon maker
+    </div>
+  	<div id='icon_area'>
+  	  <center>
+  	  	 <div id='android'>
+  	  	 	<div id='left'>
+  	  	       <img src='imgs/androidkun_green_ude_.png'>
+  	  	    </div>
+  	  	    <div id='body'>
+  	           <img src='imgs/androidkun_green_body.png'>
+  	        </div>
+  	        <div id='right'>
+  	  	       <img src='imgs/androidkun_green_ude_.png'>
+  	  	    </div>
+  	     </div>
+      </center>
+    </div>
+    <div class='edit_area' style='background-color: #eee'>
+    	<h2><b>STEP 1.</b> Set the rotation angle of the DROID's arms</h2>
+    	L-arm (rotate-deg): <input id='v_right' type='range' min='0' max='360' style='width: 210px;' value=52><br><br>
+    	R-arm (rotate-deg): <input id='v_left' type='range' min='0' max='360' style='width: 210px' value=146><br>
+    </div>
+    <div class='edit_area' style='background-color: #fff'>
+    	<h2><b>STEP 2.</b> Capture your screen to get DROID icon</h2>
+    	After you get the screen capture, please cut out the DROID icon in the painting application.<br>
+    	To capture the screen, for example, press the <i><b>PrtSc</b></i> or <i><b>Shift + Command + 3</b></i> on your keyboard.
+    </div>
+    <div class='footer' style='background-color: #B3C833; color: #eee;'>
+    	<center>Produced by a fan of android OS<br>
+    	        <i>Commemorating Google I/O 2014.</i><br><br>
+    	        June 25, 2014
+    	</center>
+    </div>
+  <script>
+     window.addEventListener("change", function (e) {
+          document.getElementById(e.target.id).title = (e.target.value) + " degree";
+          document.getElementById((e.target.id).split('_')[1]).style.webkitTransform = "rotate("+ ((e.target.value) - 0) +"deg)";
+     }, false)
+  </script>
+  </body>
+</html>
